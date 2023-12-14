@@ -1,0 +1,42 @@
+
+build:
+  stage: build
+  image: ubuntu:22.04
+  before_script:
+    - set -x
+  script:
+    # Install dependencies
+    - >
+      apt-get update -qq &&
+      apt-get install -qq -y
+      curl
+      make
+      ruby
+    # Setup gem
+    - >
+      curl -L https://rubygems.org/rubygems/rubygems-3.5.0.tgz | tar -xvzf - -C /opt &&
+      pushd /opt/rubygems-3.5.0 &&
+      ruby setup.rb &&
+      gem -v &&
+      popd
+    # Setup asciidoctor
+    - >
+      gem install asciidoctor asciidoctor-pdf rouge &&
+      asciidoctor --version
+    # Build
+    - make
+  artifacts:
+    when: always
+    paths:
+      - public/
+
+pages:
+  stage: deploy
+  image: ubuntu:22.04
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  script:
+    - echo "do nothing, it's just a passthrough from build"
+  artifacts:
+    paths:
+      - public/
