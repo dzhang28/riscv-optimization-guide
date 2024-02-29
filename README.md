@@ -2,11 +2,11 @@
 
 The intention is to give specific actionable optimization recommendations for software developers writing code for RISC-V application processors.
 
-The guide is also available at https://riscv-optimization-guide-riseproject-c94355ae3e6872252baa952524.gitlab.io/riscv-optimization-guide.html. Any changes merged into the `main` branch are automatically visible at that address using [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/).
+The guide is also available at https://riscv-optimization-guide.riseproject.dev. Any changes merged into the `main` branch are automatically visible at that address using [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/).
 
 ## Intended Audience
 
-See [Intended Audience](https://riscv-optimization-guide-riseproject-c94355ae3e6872252baa952524.gitlab.io/riscv-optimization-guide.html#_intended_audience)
+See [Intended Audience](https://riscv-optimization-guide.riseproject.dev/#_intended_audience)
 
 ## Documentation generator
 
