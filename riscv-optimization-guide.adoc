@@ -530,7 +530,9 @@ Choose the value used for LMUL/EMUL carefully.
 
 === Preferred Idioms
 
-Prefer .vx and .vf variants over .vv variants when register pressure is high.
+Fold immediate scalar values into integer vector operations where possible using the .vi instruction variant.
+
+Prefer .vi, .vx and .vf variants over .vv variants when vector register pressure is high.
 
 For example, to add 1.0 to each element of an array of 32 bit floats whose length is stored in a1, we might write
 
