@@ -2,20 +2,21 @@
 build:
   stage: build
   image: ubuntu:22.04
-  before_script:
-    - set -x
   script:
     # Install dependencies
     - >
       apt-get update -qq &&
       apt-get install -qq -y
+      build-essential
       curl
       make
-      ruby
+      ruby3.0
+      ruby3.0-dev
     # Setup gem
     - >
-      curl -L https://rubygems.org/rubygems/rubygems-3.5.0.tgz | tar -xvzf - -C /opt &&
-      pushd /opt/rubygems-3.5.0 &&
+      rubygems_version=3.5.6;
+      curl -L https://github.com/rubygems/rubygems/archive/refs/tags/v${rubygems_version}.tar.gz | tar -xzf - -C /opt &&
+      pushd /opt/rubygems-${rubygems_version} &&
       ruby setup.rb &&
       gem -v &&
       popd
