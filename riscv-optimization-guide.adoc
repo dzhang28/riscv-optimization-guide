@@ -590,9 +590,9 @@ The RISC-V vector specification provides a wide range of different load and stor
 
 . Whole register
 . Unit-stride
+. Unit-stride segment
 . Strided
 . Indexed
-. Unit-stride segment
 . Strided segment
 . Indexed segment
 
