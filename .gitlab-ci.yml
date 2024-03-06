@@ -14,8 +14,9 @@ build:
       ruby
     # Setup gem
     - >
-      curl -L https://rubygems.org/rubygems/rubygems-3.5.0.tgz | tar -xvzf - -C /opt &&
-      pushd /opt/rubygems-3.5.0 &&
+      rubygems_version=3.5.6;
+      curl -L https://github.com/rubygems/rubygems/archive/refs/tags/v${rubygems_version}.tar.gz | tar -xzf - -C /opt &&
+      pushd /opt/rubygems-${rubygems_version} &&
       ruby setup.rb &&
       gem -v &&
       popd
