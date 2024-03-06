@@ -2,13 +2,12 @@
 build:
   stage: build
   image: ubuntu:22.04
-  before_script:
-    - set -x
   script:
     # Install dependencies
     - >
       apt-get update -qq &&
       apt-get install -qq -y
+      build-essential
       curl
       make
       ruby
