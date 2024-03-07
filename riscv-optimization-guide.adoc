@@ -485,6 +485,7 @@ See the corresponding <<_controlling_rounding_behavior_vector,vector section>>.
 
 == Optimizing Vector
 
+As this document targets RISC-V application processors, the recommendations in this section assume, at a minimum, the presence of the "V" Vector extension for application processors as defined in the 'RISC-V "V" Vector Extension' specification version 1.0.  The "V" Vector extension depends on Zvl128b. Consequently, this document assumes a VLEN of >= 128 and does not consider optimizations for smaller VLENs.
 
 === Avoid Using v0 for Non-mask Operations
 
