@@ -546,8 +546,7 @@ For example, to add 1.0 to each element of an array of 32 bit floats whose lengt
   vle32.v v8, (a0)
   vfadd.vf v10, v8, fa0
   vse32.v v10, (a0)
-  slli t1, t0, 2
-  add a0, a0, t1
+  sh2add a0, t0, a0
   sub a1, a1, t0
   bnez a1, 1b
 ----
