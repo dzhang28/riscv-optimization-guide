@@ -430,7 +430,7 @@ Use canonical NOPs, NOP ( ADDI X0, X0, 0 ) and C.NOP ( C.ADDI X0, 0 ), to add pa
 
 === Align char array to greater alignment
 
-For a cpu that  doesn't support fast misaligned memory accesses, increasing alignment might enable wider load/store usage for memory copy. For example, align to 4 for rv32 and align to 8 for rv64 might enable using LW/SW or LD/SD. For the a cpu that supports fast misaligned memory accesses, wider load/store would be more profitable regardless of the data alignment.
+For a cpu that doesn't support fast misaligned memory accesses, increasing alignment might enable wider load/store usage for memory copy. For example, align to 4 for rv32 and align to 8 for rv64 might enable using LW/SW or LD/SD. For a cpu that supports fast misaligned memory accesses, wider load/store would be more profitable regardless of the data alignment.
 
 === Use shifts to clear leading/trailing bits
 
